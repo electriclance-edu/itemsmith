@@ -1,0 +1,166 @@
+:root {
+  --truePixelSize:3px;
+  --mpx:calc(var(--truePixelSize)*0.8);
+  --normTrans:0.2s;
+}
+@font-face {
+  font-family:"Minecraft";
+  src: url('fonts/minecraft.woff2') format('woff2'),
+       url('fonts/minecraft.woff') format('woff'),
+       url('fonts/minecraft.ttf') format('truetype');
+}
+p, h1, h2, h3, h4, h5, h6, input, button {
+  font-family:"Minecraft";
+  margin:0;
+  line-height:calc(var(--mpx)*9);
+  font-size:calc(var(--mpx)*9);
+  color:rgb(255,255,255);
+}
+h1,h2,h3 {
+  color:rgb(65,65,65);
+}
+body {
+  background-image:url("images/space.png");
+  background-size:cover;
+  overflow:hidden;
+}
+.space {
+  height:calc(var(--mpx)*4);
+}
+.shortSpace {
+  height:calc(var(--mpx)*2);
+}
+.bigBorder {
+  box-shadow: calc(var(--mpx)*2) 0px rgb(85,85,85),
+              calc(var(--mpx)*2) calc(var(--mpx)*1) rgb(85,85,85),
+              calc(var(--mpx)*1) calc(var(--mpx)*2) rgb(85,85,85),
+              0px calc(var(--mpx)*2) rgb(85,85,85),
+              calc(var(--mpx)*-2) 0px rgb(255,255,255),
+              calc(var(--mpx)*-2) calc(var(--mpx)*-1) rgb(255,255,255),
+              calc(var(--mpx)*-1) calc(var(--mpx)*-2) rgb(255,255,255),
+              0px calc(var(--mpx)*-2) rgb(255,255,255),
+              calc(var(--mpx)*-1) 0px rgb(55,55,55),
+              calc(var(--mpx)*-1) calc(var(--mpx)*-1) rgb(55,55,55),
+              0px calc(var(--mpx)*-1) rgb(55,55,55),
+              calc(var(--mpx)*-1) var(--mpx) rgb(140,140,140),
+              var(--mpx) calc(var(--mpx)*-1) rgb(140,140,140),
+              calc(var(--mpx)*-2) calc(var(--mpx)*-2) rgb(0,0,0),
+              calc(var(--mpx)*2) calc(var(--mpx)*2) rgb(0,0,0),
+              calc(var(--mpx)*-1) calc(var(--mpx)*2) rgb(0,0,0),
+              calc(var(--mpx)*-2) calc(var(--mpx)*1) rgb(0,0,0),
+              calc(var(--mpx)*1) calc(var(--mpx)*-2) rgb(0,0,0),
+              calc(var(--mpx)*2) calc(var(--mpx)*-1) rgb(0,0,0),
+              calc(var(--mpx)*3) calc(var(--mpx)) rgb(0,0,0),
+              calc(var(--mpx)*3) 0 rgb(0,0,0),
+              calc(var(--mpx)) calc(var(--mpx)*3) rgb(0,0,0),
+              0 calc(var(--mpx)*3) rgb(0,0,0),
+              0 calc(var(--mpx)*-3) rgb(0,0,0),
+              0 calc(var(--mpx)*-3) rgb(0,0,0),
+              calc(var(--mpx)*-3) calc(var(--mpx)*-1) rgb(0,0,0),
+              calc(var(--mpx)*-1) calc(var(--mpx)*-3) rgb(0,0,0)
+}
+.leftSection {
+  width:100%;
+  height:100vh;
+}
+.inventorySlots {
+  user-select:none;
+  padding:calc(var(--mpx)*2) calc(var(--mpx)*5) calc(var(--mpx)*3) calc(var(--mpx)*5);
+  background-color:rgb(200,200,200);
+  display:inline-block;
+  font-size:0;
+}
+.itemSlot {
+  overflow:hidden;
+  width:calc(var(--mpx) * 16);
+  height:calc(var(--mpx) * 16);
+  background-color:rgb(140,140,140);
+  display:inline-block;
+  margin:var(--mpx);
+  box-shadow: var(--mpx) 0px rgb(255,255,255),
+              var(--mpx) var(--mpx) rgb(255,255,255),
+              0px var(--mpx) rgb(255,255,255),
+              calc(var(--mpx)*-1) 0px rgb(55,55,55),
+              calc(var(--mpx)*-1) calc(var(--mpx)*-1) rgb(55,55,55),
+              0px calc(var(--mpx)*-1) rgb(55,55,55),
+              calc(var(--mpx)*-1) var(--mpx) rgb(140,140,140),
+              var(--mpx) calc(var(--mpx)*-1) rgb(140,140,140);
+}
+.itemSlot img {
+  width:calc(var(--mpx)*16);
+  image-rendering:pixelated;
+}
+.itemSlot:hover,.selectedSlot {
+  background-color:rgb(200,200,200);
+}
+.itemTooltip {
+  z-index:100;
+  position:absolute;
+  background-color:rgb(25,10,25);
+  padding:calc(var(--mpx)*2);
+  border:calc(var(--mpx)*1) solid rgb(45,10,100);
+  box-shadow: var(--mpx) 0 rgb(25,10,25),
+              0 var(--mpx) rgb(25,10,25),
+              calc(var(--mpx)*-1) 0 rgb(25,10,25),
+              0 calc(var(--mpx)*-1) rgb(25,10,25);
+}
+.itemTitle {
+  margin-bottom:var(--mpx);
+}
+.disclaimer {
+  top:calc(var(--mpx) * 4);
+  left:calc(var(--mpx) * 4);
+  position:absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+.normalText {
+  font-weight:normal;
+  font-style:normal;
+}
+.smallText {
+  font-size:calc(var(--mpx)*7);
+}
+.italic {
+  font-style:italic;
+}
+.bold {
+  font-weight:bold;
+}
+.centered {
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  position:absolute;
+}
+.hidden {
+  display:none;
+}
+.transp {
+  opacity:0;
+}
+.grey {
+  color:rgb(170,170,170);
+  text-shadow:var(--mpx) var(--mpx) rgb(40,40,40);
+}
+.darkGrey {
+  color:rgb(85,85,85);
+  text-shadow:var(--mpx) var(--mpx) rgb(20,20,20);
+}
+.white {
+  color:rgb(255,255,255);
+  text-shadow:var(--mpx) var(--mpx) rgb(65,65,65);
+}
+.lightRed {
+  color:rgb(255,85,85);
+  text-shadow:var(--mpx) var(--mpx) rgb(65,20,20);
+}
