@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title></title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="initialData.js"></script>
+    <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </head>
   <body onload="onload()">
@@ -15,69 +15,52 @@
         <span class="lightRed normalText bold">unofficial</span> minecraft item editor
       </p>
     </div>
-    <div class="leftSection">
-      <div class="itemTooltip hidden" id="itemTooltip">
-        <p class="itemTitle">Beyondbloom</p>
-        <p><span class="grey">From the flower emanates the <br>
-           cries of a solitary soul, eons old, <br>
-           under a curse inescapable.</span><br><span>
-           <br>
-           <span class="darkGrey">Rare Ancient Artifact</span></p>
-        <p></p>
-      </div>
-      <div class="inventorySlots bigBorder centered">
+    <div class="itemTooltip hidden tooltipBorder" id="itemTooltip">
+      <p>Beyondbloom</p>
+      <p><span class="grey">From the flower emanates the <br>
+         cries of a solitary soul, eons old, <br>
+         under a curse inescapable.</span><br><span>
+         <br>
+         <span class="darkGrey">Rare Ancient Artifact</span></p>
+      <p></p>
+    </div>
+    <div class="main">
+      <div class="itemSlots bigBorder">
         <h3 class="normalText">Chest</h3>
         <div class="shortSpace"></div>
-        <div class="itemSlot">
-          <img src="images/textures/wither_rose.png" class="item">
+        <div class="chestSlots" id="chestSlots">
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
+          <div class="itemSlot"></div>
         </div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div> <br>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div> <br>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div> <br>
         <div class="space"></div>
         <h3 class="normalText">Inventory</h3>
-        <div class="space"></div>>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div> <br>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div>
-        <div class="itemSlot"></div> <br>
+        <div class="space"></div>
+        <div class="invSlots" id="invSlots">
         <div class="itemSlot"></div>
         <div class="itemSlot"></div>
         <div class="itemSlot"></div>
@@ -87,12 +70,66 @@
         <div class="itemSlot"></div>
         <div class="itemSlot"></div>
         <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+        <div class="itemSlot"></div>
+      </div>
+      </div>
+      <div class="editor">
+        <div class="editorOptions bigBorder headerGrey">
+          <span class="bold">B</span>
+          <span class="italic">I</span>
+          <span class="underlined">U</span>
+          <span class="strikethrough">S</span>
+          <span>Reset</span><br>
+          <p class="headerGrey">Color:</p><div id="selectedColor" class="selectedColor" onclick="toggle('editorColors','115.2px','calc(var(--mpx)*2)')"></div>
+          <div class="editorColors" id="editorColors">
+            <!--
+              filled up with elements by Editor.onload();
+            -->
+            <span class="headerGrey smallText">other</span>
+          </div>
+        </div>
+        <div class="selectedItem tooltipBorder" contenteditable="true">
+          <p>lorem ipsum ur face</p>
+          <p class="grey">
+            gamerm oment omg <br>
+            lolzer this is <br>
+            this is so cool <br>
+            <br>
+            <span class="darkGrey">ultra rare item</span>
+          </p>
+
+        </div>
       </div>
     </div>
-    <div class="notifications">
-      <div>
-        <p>Confused about something?</p>
+    <div class="notifications hidden">
+      <div class="tooltipBorder" style="--order:0">
+        <p class="grey">Thanks for using <span class="white">Itemsmith</span>!</p>
+        <p class="smallText grey">Click to get rid of me.</p>
       </div>
+      <div class="tooltipBorder" style="--order:1">
+        <p class="">Confused about something?</p>
+        <p class="smallText grey">Press the question mark (?) in the corner for tooltips.</p>
+      </div>
+    </div>
+    <div class="bottomRight">
+      <h1 class="white bold">?</h1>
     </div>
   </body>
 </html>
